@@ -1,5 +1,4 @@
 package lk.ijse.apparelHub.Controller;
 
-public class LoginFormController {
-
+public class CustomerFormController {
 }

@@ -1,4 +1,4 @@
 package lk.ijse.apparelHub.dto;
 
-public class Main {
+public class EmployeeDto {
 }
