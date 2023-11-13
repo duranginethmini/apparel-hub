@@ -13,6 +13,7 @@ passWord VARCHAR(50)
 CREATE TABLE buyer(
 B_id VARCHAR (10) PRIMARY KEY,
 name VARCHAR(50),
+address TEXT,
 telNum INT(20)
 );
 
