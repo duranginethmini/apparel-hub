@@ -7,6 +7,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -135,17 +136,40 @@
                   <Font name="System Bold" size="21.0" />
                </font>
             </Label>
-            <TextField layoutX="24.0" layoutY="196.0" prefHeight="26.0" prefWidth="210.0" />
-            <TextField layoutX="26.0" layoutY="74.0" prefHeight="26.0" prefWidth="210.0" />
-            <TextField layoutX="620.0" layoutY="75.0" prefHeight="26.0" prefWidth="210.0" />
+            <TextField fx:id="txtCost" layoutX="24.0" layoutY="196.0" prefHeight="26.0" prefWidth="210.0" />
+            <TextField fx:id="txtMachineId" layoutX="26.0" layoutY="74.0" prefHeight="26.0" prefWidth="210.0" />
+            <TextField fx:id="txtMachineType" layoutX="620.0" layoutY="75.0" prefHeight="26.0" prefWidth="210.0" />
          </children>
       </Pane>
-      <TableView layoutX="288.0" layoutY="463.0" opacity="0.8" prefHeight="316.0" prefWidth="874.0">
+      <TableView fx:id="tblMachine" layoutX="295.0" layoutY="463.0" opacity="0.8" prefHeight="316.0" prefWidth="867.0">
         <columns>
-          <TableColumn prefWidth="119.0" text="Machine Id:" />
-          <TableColumn prefWidth="126.0" text="Type:" />
-            <TableColumn prefWidth="628.0" text="Cost (With Description)" />
+          <TableColumn fx:id="colMachineId" prefWidth="119.0" text="Machine Id:" />
+          <TableColumn fx:id="colMachineType" prefWidth="126.0" text="Type:" />
+            <TableColumn fx:id="colCost" prefWidth="628.0" text="Cost (With Description)" />
         </columns>
       </TableView>
+      <JFXButton buttonType="RAISED" layoutX="1084.0" layoutY="417.0" onAction="#btnMachineSaveOnAction" style="-fx-background-color: green;" text="Save" textFill="#ebe2e2">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+         <effect>
+            <Shadow />
+         </effect>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="952.0" layoutY="417.0" onAction="#btnMachineUpdateOnAction" prefHeight="36.0" prefWidth="105.0" style="-fx-background-color: yellow;" text="Update" textFill="#2c2a2a">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="840.0" layoutY="417.0" onAction="#btnClearOnAction" prefHeight="36.0" prefWidth="85.0" style="-fx-background-color: blue;" text="Clear" textFill="#eee0e0">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="721.0" layoutY="417.0" onAction="#btnMachineDeleteOnAction" style="-fx-background-color: red;" text="Delete" textFill="#eeeaea">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

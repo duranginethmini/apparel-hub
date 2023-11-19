@@ -7,10 +7,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class PaymentDto {
-    private String Pay_id;
-    private double amount;
-    private String status;
-
-
+public class MachineDto {
+    private String M_id;
+    private String type;
+    private double cost;
 }

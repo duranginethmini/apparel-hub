@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-
+<?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="root" prefHeight="799.0" prefWidth="1248.0" style="-fx-background-color: #957DDC;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.apparelHub.Controller.SupplierManageController">
    <children>
+      <ImageView fitHeight="800.0" fitWidth="1248.0" layoutX="-1.0" opacity="0.54" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@../assets/Scissor.jpg" />
+         </image>
+      </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#957ddc" height="772.0" layoutX="35.0" layoutY="14.0" opacity="0.65" stroke="WHITE" strokeType="INSIDE" width="200.0">
          <effect>
             <InnerShadow />
@@ -101,5 +110,58 @@
             <Image url="@../assets/report.png" />
          </image>
       </ImageView>
+      <Text layoutX="585.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier Manage">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+         <effect>
+            <Blend />
+         </effect>
+      </Text>
+      <Label layoutX="405.0" layoutY="113.0" text="Supplier Id:">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="952.0" layoutY="113.0" text="Supplier Name:">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="405.0" layoutY="315.0" text="Supplier Address:">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font></Label>
+      <Label layoutX="960.0" layoutY="315.0" text="Supplier Tele:">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font></Label>
+      <TextField fx:id="txtSupplierId" layoutX="400.0" layoutY="148.0" prefHeight="40.0" prefWidth="225.0" />
+      <TextField fx:id="txtSupplierName" layoutX="950.0" layoutY="148.0" prefHeight="40.0" prefWidth="225.0" />
+      <TextField fx:id="txtSupplierAddress" layoutX="405.0" layoutY="348.0" prefHeight="40.0" prefWidth="225.0" />
+      <TextField fx:id="txtSupplierTelNum" layoutX="950.0" layoutY="347.0" prefHeight="40.0" prefWidth="225.0" />
+      <JFXButton buttonType="RAISED" layoutX="1063.0" layoutY="455.0" onAction="#btnSupplierSaveOnAction" style="-fx-background-color: green;" text="Save" textFill="#ebe2e2">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+         <effect>
+            <Shadow />
+         </effect>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="942.0" layoutY="455.0" onAction="#btnSupplierUpdateOnAction" prefHeight="36.0" prefWidth="105.0" style="-fx-background-color: yellow;" text="Update" textFill="#2c2a2a">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="843.0" layoutY="455.0" onAction="#btnClearOnAction" prefHeight="36.0" prefWidth="85.0" style="-fx-background-color: blue;" text="Clear" textFill="#eee0e0">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="726.0" layoutY="455.0" onAction="#btnSupplierDeleteOnAction" style="-fx-background-color: red;" text="Delete" textFill="#eeeaea">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

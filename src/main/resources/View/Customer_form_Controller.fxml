@@ -170,7 +170,7 @@
       <TableView fx:id="tblCustomer" layoutX="252.0" layoutY="438.0" opacity="0.9" prefHeight="313.0" prefWidth="910.0">
         <columns>
           <TableColumn fx:id="colCusId" prefWidth="75.0" text="Id" />
-          <TableColumn fx:id="ColCusName" prefWidth="175.0" text="Name" />
+          <TableColumn fx:id="colCusName" prefWidth="175.0" text="Name" />
             <TableColumn fx:id="colCusAddress" prefWidth="393.0" text="Address" />
             <TableColumn fx:id="colCusTel" prefWidth="266.0" text="TeleNum" />
         </columns>

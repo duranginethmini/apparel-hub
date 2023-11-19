@@ -9,19 +9,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class EmployeeFormController {
+public class ReportFormController {
     @FXML
     private AnchorPane root;
-
-    @FXML
-    void btnCustomerOnAction(ActionEvent event) throws IOException {
-        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/View/Customer_form_Controller.fxml"));
-        Scene scene = new Scene(anchorPane);
-        Stage stage = (Stage) root.getScene().getWindow();
-        stage.setScene(scene);
-        stage.setTitle("Customer Manage");
-        stage.centerOnScreen();
-    }
 
     @FXML
     void btnDashBoardOnAction(ActionEvent event) throws IOException {
@@ -30,6 +20,17 @@ public class EmployeeFormController {
         Stage stage = (Stage) root.getScene().getWindow();
         stage.setScene(scene);
         stage.setTitle("Dash Board");
+        stage.centerOnScreen();
+
+    }
+
+    @FXML
+    void btnEmployeeOnAction(ActionEvent event) throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/View/Employee_Form_Controller.fxml"));
+        Scene scene = new Scene(anchorPane);
+        Stage stage = (Stage) root.getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Employee Manage");
         stage.centerOnScreen();
     }
 
@@ -64,12 +65,12 @@ public class EmployeeFormController {
     }
 
     @FXML
-    void btnReportOnAction(ActionEvent event) throws IOException {
-        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/View/Report_Form_Controller.fxml"));
+    void btnCustomerOnAction(ActionEvent event) throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/View/Customer_form_Controller.fxml"));
         Scene scene = new Scene(anchorPane);
         Stage stage = (Stage) root.getScene().getWindow();
         stage.setScene(scene);
-        stage.setTitle("Reports");
+        stage.setTitle("Customer Manage");
         stage.centerOnScreen();
     }
 
@@ -81,5 +82,10 @@ public class EmployeeFormController {
         stage.setScene(scene);
         stage.setTitle("Stock Manage");
         stage.centerOnScreen();
+    }
+
+    @FXML
+    void btnReportOnAction(ActionEvent event) {
+
     }
 }

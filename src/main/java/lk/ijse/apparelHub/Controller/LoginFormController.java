@@ -30,7 +30,7 @@ public class LoginFormController {
 
     @FXML
     private AnchorPane loginPane;
-    private String username="1234";
+    private String username="Durangi";
     private String password="1234";
 
     @FXML

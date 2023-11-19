@@ -127,13 +127,13 @@
                   <Font name="System Bold" size="21.0" />
                </font>
             </Label>
-            <TextField layoutX="14.0" layoutY="52.0" prefHeight="40.0" prefWidth="207.0" />
+            <TextField fx:id="txtStockId" layoutX="14.0" layoutY="52.0" prefHeight="40.0" prefWidth="207.0" />
             <Label layoutX="630.0" layoutY="14.0" prefHeight="26.0" prefWidth="90.0" text="Type:">
                <font>
                   <Font name="System Bold" size="21.0" />
                </font>
             </Label>
-            <TextField layoutX="630.0" layoutY="52.0" prefHeight="40.0" prefWidth="207.0" />
+            <TextField fx:id="txtType" layoutX="630.0" layoutY="52.0" prefHeight="40.0" prefWidth="207.0" />
             <Label layoutX="14.0" layoutY="145.0" text="Amount:">
                <font>
                   <Font name="System Bold" size="21.0" />
@@ -144,39 +144,39 @@
                   <Font name="System Bold" size="21.0" />
                </font>
             </Label>
-            <TextField layoutX="15.0" layoutY="187.0" prefHeight="40.0" prefWidth="207.0" />
-            <TextField layoutX="630.0" layoutY="187.0" prefHeight="40.0" prefWidth="207.0" />
+            <TextField fx:id="txtAmount" layoutX="15.0" layoutY="187.0" prefHeight="40.0" prefWidth="207.0" />
+            <TextField fx:id="txtDesc" layoutX="630.0" layoutY="187.0" prefHeight="40.0" prefWidth="207.0" />
             <ImageView fitHeight="478.0" fitWidth="476.0" layoutX="195.0" layoutY="4.0" opacity="0.51" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assets/Stock.png" />
                </image>
             </ImageView>
-            <JFXButton buttonType="RAISED" layoutX="385.0" layoutY="268.0" style="-fx-background-color: red;" text="Delete" textFill="#f5f2f2">
+            <JFXButton buttonType="RAISED" layoutX="385.0" layoutY="268.0" onAction="#btnStockDeleteOnAction" style="-fx-background-color: red;" text="Delete" textFill="#f5f2f2">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>
             </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="506.0" layoutY="266.0" style="-fx-background-color: blue;" text="Clear" textFill="#f2eaea">
+            <JFXButton buttonType="RAISED" layoutX="506.0" layoutY="266.0" onAction="#btnStockClearOnAction" style="-fx-background-color: blue;" text="Clear" textFill="#f2eaea">
                <font>
                   <Font name="System Bold" size="21.0" />
                </font>
             </JFXButton>
          </children>
       </Pane>
-      <TableView layoutX="259.0" layoutY="474.0" opacity="0.88" prefHeight="306.0" prefWidth="904.0">
+      <TableView fx:id="tblStockManage" layoutX="259.0" layoutY="474.0" opacity="0.88" prefHeight="306.0" prefWidth="904.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Id:" />
-          <TableColumn prefWidth="256.0" text="Type:" />
-            <TableColumn prefWidth="317.0" text="Amount:" />
-            <TableColumn prefWidth="252.0" text="Description:" />
+          <TableColumn fx:id="cioStockId" prefWidth="75.0" text="Id:" />
+          <TableColumn fx:id="colType" prefWidth="256.0" text="Type:" />
+            <TableColumn fx:id="colAmount" prefWidth="317.0" text="Amount:" />
+            <TableColumn fx:id="colDescription" prefWidth="252.0" text="Description:" />
         </columns>
       </TableView>
-      <JFXButton buttonType="RAISED" layoutX="1002.0" layoutY="404.0" style="-fx-background-color: green;" text="Save" textFill="#fceaea">
+      <JFXButton buttonType="RAISED" layoutX="1002.0" layoutY="404.0" onAction="#btnStockSaveOnAction" style="-fx-background-color: green;" text="Save" textFill="#fceaea">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="872.0" layoutY="405.0" style="-fx-background-color: yellow;" text="Update">
+      <JFXButton buttonType="RAISED" layoutX="872.0" layoutY="405.0" onAction="#btnStockUpdateOnAction" style="-fx-background-color: yellow;" text="Update">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>

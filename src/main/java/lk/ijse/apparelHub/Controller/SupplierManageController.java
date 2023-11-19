@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -13,6 +14,37 @@ public class SupplierManageController {
 
     @FXML
     private AnchorPane root;
+
+    @FXML
+    private TextField txtSupplierAddress;
+
+    @FXML
+    private TextField txtSupplierId;
+
+    @FXML
+    private TextField txtSupplierName;
+
+    @FXML
+    private TextField txtSupplierTelNum;
+
+    @FXML
+    void btnClearOnAction(ActionEvent event) {
+
+    }
+    @FXML
+    void btnSupplierDeleteOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnSupplierSaveOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnSupplierUpdateOnAction(ActionEvent event) {
+
+    }
 
     @FXML
     void btnCustomerOnAction(ActionEvent event) throws IOException {
@@ -75,8 +107,13 @@ public class SupplierManageController {
     }
 
     @FXML
-    void btnReportOnAction(ActionEvent event) {
-
+    void btnReportOnAction(ActionEvent event) throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/View/Report_Form_Controller.fxml"));
+        Scene scene = new Scene(anchorPane);
+        Stage stage = (Stage) root.getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Reports");
+        stage.centerOnScreen();
     }
 
     @FXML

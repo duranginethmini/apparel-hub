@@ -128,13 +128,15 @@
       </ImageView>
       <Pane layoutX="617.0" layoutY="159.0" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #F7F5E3;" />
       <Pane layoutX="976.0" layoutY="159.0" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #F7F5E3;" />
-      <TableView layoutX="269.0" layoutY="371.0" prefHeight="415.0" prefWidth="867.0">
+      <TableView fx:id="tblOrder" layoutX="269.0" layoutY="371.0" prefHeight="415.0" prefWidth="867.0">
         <columns>
-          <TableColumn prefWidth="96.0" text="Order Id:" />
-          <TableColumn prefWidth="130.0" text="Customer Id:" />
-            <TableColumn prefWidth="183.0" text="Payment Id:" />
-            <TableColumn prefWidth="221.0" text="Price" />
-            <TableColumn prefWidth="234.0" text="Description" />
+          <TableColumn fx:id="colOrderId" prefWidth="96.0" text="Order Id:" />
+          <TableColumn fx:id="colCusId" prefWidth="130.0" text="Customer Id:" />
+            <TableColumn fx:id="colPayId" prefWidth="183.0" text="Payment Id:" />
+            <TableColumn fx:id="colPrice" prefWidth="52.0" text="Price" />
+            <TableColumn fx:id="colDesc" prefWidth="161.0" text="Description" />
+            <TableColumn fx:id="colQty" prefWidth="98.0" text="Qty:" />
+            <TableColumn fx:id="colDate" prefWidth="146.0" text="Date:" />
         </columns>
       </TableView>
    </children>

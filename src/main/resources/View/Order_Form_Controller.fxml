@@ -114,49 +114,69 @@
             <Font name="System Bold" size="30.0" />
          </font>
       </Text>
-      <Label layoutX="346.0" layoutY="165.0" text="Order Id:">
+      <Label layoutX="338.0" layoutY="114.0" text="Order Id:">
          <font>
             <Font name="System Bold" size="21.0" />
          </font>
       </Label>
-      <Label layoutX="894.0" layoutY="162.0" text="Customer Id:">
+      <Label layoutX="887.0" layoutY="114.0" text="Customer Id:">
          <font>
             <Font name="System Bold" size="21.0" />
          </font>
       </Label>
-      <Label layoutX="346.0" layoutY="357.0" text="Payment Id:">
+      <Label layoutX="338.0" layoutY="266.0" text="Payment Id:">
          <font>
             <Font name="System Bold" size="21.0" />
          </font></Label>
-      <Label layoutX="894.0" layoutY="357.0" text="Price:">
+      <Label layoutX="894.0" layoutY="266.0" text="Price:">
          <font>
             <Font name="System Bold" size="21.0" />
          </font></Label>
-      <Label layoutX="346.0" layoutY="534.0" text="Description:">
+      <Label layoutX="328.0" layoutY="410.0" text="Description:">
          <font>
             <Font name="System Bold" size="21.0" />
          </font></Label>
-      <TextField layoutX="338.0" layoutY="199.0" prefHeight="40.0" prefWidth="214.0" />
-      <TextField layoutX="876.0" layoutY="421.0" prefHeight="40.0" prefWidth="214.0" />
-      <TextField layoutX="338.0" layoutY="575.0" prefHeight="40.0" prefWidth="214.0" />
-      <JFXComboBox layoutX="894.0" layoutY="199.0" prefHeight="40.0" prefWidth="214.0" />
-      <JFXComboBox layoutX="328.0" layoutY="410.0" prefHeight="40.0" prefWidth="214.0" />
-      <JFXButton buttonType="RAISED" layoutX="662.0" layoutY="675.0" style="-fx-background-color: red;" text="Delete" textFill="#ebdfdf">
+      <TextField fx:id="txtOrderId" layoutX="328.0" layoutY="168.0" prefHeight="40.0" prefWidth="214.0" />
+      <TextField fx:id="txtOrderPrice" layoutX="875.0" layoutY="306.0" prefHeight="40.0" prefWidth="214.0" />
+      <TextField fx:id="txtOrderDesc" layoutX="316.0" layoutY="456.0" prefHeight="40.0" prefWidth="214.0" />
+      <JFXComboBox fx:id="cmbCustId" layoutX="887.0" layoutY="168.0" onAction="#cmbCustomerOnAction" prefHeight="40.0" prefWidth="214.0" />
+      <JFXComboBox fx:id="cmbPayId" layoutX="328.0" layoutY="337.0" onAction="#cmbPaymentOnAction" prefHeight="40.0" prefWidth="214.0" />
+      <JFXButton buttonType="RAISED" layoutX="662.0" layoutY="675.0" onAction="#btnDeleteOnAction" style="-fx-background-color: red;" text="Delete" textFill="#ebdfdf">
          <font>
             <Font name="System Bold" size="16.0" />
          </font></JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="776.0" layoutY="675.0" style="-fx-background-color: blue;" text="Clear" textFill="#f5eded">
+      <JFXButton buttonType="RAISED" layoutX="776.0" layoutY="675.0" onAction="#btnClearOnAction" style="-fx-background-color: blue;" text="Clear" textFill="#f5eded">
          <font>
             <Font name="System Bold" size="16.0" />
          </font></JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="875.0" layoutY="675.0" prefHeight="26.0" prefWidth="107.0" style="-fx-background-color: yellow;" text="Update">
+      <JFXButton buttonType="RAISED" layoutX="875.0" layoutY="675.0" onAction="#btnUpdateOnAction" prefHeight="26.0" prefWidth="107.0" style="-fx-background-color: yellow;" text="Update">
          <font>
             <Font name="System Bold" size="16.0" />
          </font></JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="1014.0" layoutY="675.0" style="-fx-background-color: green;" text="Save" textFill="#f8efef">
+      <JFXButton buttonType="RAISED" layoutX="1014.0" layoutY="675.0" onAction="#btnSaveOnAction" style="-fx-background-color: green;" text="Save" textFill="#f8efef">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </JFXButton>
+      <JFXButton layoutX="1026.0" layoutY="729.0" onAction="#btnPaymentOnAction" prefHeight="40.0" prefWidth="172.0" style="-fx-background-color: orange;" text="  Payment" textFill="#030303">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1027.0" layoutY="729.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-payment-50.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="894.0" layoutY="397.0" text="Quantity:">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font></Label>
+      <Label layoutX="328.0" layoutY="514.0" text="Date:">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font></Label>
+      <TextField fx:id="txtQty" layoutX="875.0" layoutY="443.0" prefHeight="40.0" prefWidth="214.0" />
+      <TextField fx:id="txtDate" layoutX="316.0" layoutY="547.0" prefHeight="40.0" prefWidth="214.0" />
    </children>
 </AnchorPane>

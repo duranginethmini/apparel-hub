@@ -1,5 +1,7 @@
 package lk.ijse.apparelHub.Controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,21 +10,24 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.apparelHub.dto.CustomerDto;
+import lk.ijse.apparelHub.dto.tm.CustomerTm;
 import lk.ijse.apparelHub.model.CustomerModel;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 public class CustomerFormController {
     @FXML
     private AnchorPane root;
     @FXML
-    private TableView<?> tblCustomer;
+    private TableView<CustomerTm> tblCustomer;
     @FXML
-    private TableColumn<?, ?> ColCusName;
+    private TableColumn<?, ?> colCusName;
 
     @FXML
     private TableColumn<?, ?> colCusAddress;
@@ -44,6 +49,11 @@ public class CustomerFormController {
 
     @FXML
     private TextField txtCusTelNum;
+
+    public void initialize(){
+        loadAllCustomers();
+        setCellValueFactory();
+    }
     @FXML
     void btnClearOnAction(ActionEvent event) {
         clearFields();
@@ -56,6 +66,36 @@ public class CustomerFormController {
         txtCusTelNum.setText("");
     }
 
+    private void setCellValueFactory() {
+        colCusId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colCusName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colCusAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
+        colCusTel.setCellValueFactory(new PropertyValueFactory<>("telNum"));
+    }
+    private void loadAllCustomers() {
+        var model = new CustomerModel();
+
+        ObservableList<CustomerTm> obList = FXCollections.observableArrayList();
+
+        try {
+            List<CustomerDto> dtoList = model.getAllCustomers();
+
+            for(CustomerDto dto : dtoList) {
+                obList.add(
+                        new CustomerTm(
+                                dto.getId(),
+                                dto.getName(),
+                                dto.getAddress(),
+                                dto.getTelNum()
+                        )
+                );
+            }
+
+            tblCustomer.setItems(obList);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
     @FXML
     void btnCustomerDeleteOnAction(ActionEvent event) {
         String id = txtCusId.getText();
@@ -168,8 +208,13 @@ public class CustomerFormController {
     }
 
     @FXML
-    void btnReportOnAction(ActionEvent event) {
-
+    void btnReportOnAction(ActionEvent event) throws IOException {
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/View/Report_Form_Controller.fxml"));
+        Scene scene = new Scene(anchorPane);
+        Stage stage = (Stage) root.getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Reports");
+        stage.centerOnScreen();
     }
 
     @FXML
